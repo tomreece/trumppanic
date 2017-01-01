@@ -95,6 +95,11 @@ def upvote_entry(entry_id):
 
     return 'success'
 
+@app.route('/<int:entry_id>')
+def view_entry_id(entry_id):
+    entry = Entry.query.get(entry_id)
+    return render_template('index.html', entries=[entry])
+
 #
 # Run locally
 #

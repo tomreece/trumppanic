@@ -22,7 +22,8 @@
         <div class="col-sm-6 col-sm-offset-3">
             {{ entry.created | date }} |
             <span data-id="{{ entry.id }}" class="vote-count">{{ entry.upvotes }}</span> upvotes |
-            <a data-id="{{ entry.id }}" class="vote-link">vote</a>
+            <a data-id="{{ entry.id }}" class="vote-link">vote</a> |
+            <a href="/{{ entry.id }}" class="share-link">share</a>
         </div>
     </div>
 </div>

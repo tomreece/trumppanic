@@ -37,7 +37,7 @@ ul {
     font-size: 12px;
 }
 
-.vote-link {
+.vote-link, .share-link {
     color: #333;
     text-decoration: underline;
     cursor: pointer;
