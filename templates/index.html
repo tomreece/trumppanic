@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for entry in entries %}
+<div class="container entry">
+    <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>I voted for Trump because</h3>
+            {{ entry.why }}
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+            {% if entry.regret %}
+                <h3 class="regrets">and I regret my decision because</h3>
+                {{ entry.regret }}
+            {% else %}
+                <h3 class="no-regrets">and I have no regrets.</h3>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row text-center entry-footer">
+        <div class="col-sm-6 col-sm-offset-3">
+            {{ entry.created | date }} |
+            <span data-id="{{ entry.id }}" class="vote-count">{{ entry.upvotes }}</span> upvotes |
+            <a data-id="{{ entry.id }}" class="vote-link">vote</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    $(function () {
+        $('.vote-link').click(function (e) {
+            var id = $(e.target).data('id');
+
+            $.get('/upvote/' + id).done(function () {
+                var voteEle = $('span.vote-count[data-id="' + id + '"]');
+                var numVotes = parseInt(voteEle.text()) + 1;
+                voteEle.html(numVotes);
+            });
+
+            return false;
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,44 @@
+body {
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+ul {
+    list-style: none;
+    margin-before: 0px;
+}
+
+#logo {
+    margin-top: 20px;
+    width: 200px;
+}
+
+.nav-item {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.entry {
+    margin-top: 50px;
+}
+
+.no-regrets {
+    color: #27ae60;
+}
+
+.regrets {
+    color: #e74c3c;
+}
+
+.entry-footer {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.vote-link {
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+}
