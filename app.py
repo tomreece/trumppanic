@@ -101,6 +101,10 @@ def view_entry_id(entry_id):
     entry = Entry.query.get(entry_id)
     return render_template('index.html', entries=[entry])
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 #
 # Run locally
 #
