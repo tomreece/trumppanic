@@ -69,10 +69,10 @@ def add_post():
     regret = request.form.get('regret', None)
 
     if why:
-        why = why.strip()
+        why = why.strip()[:1500]
 
     if regret:
-        regret = regret.strip()
+        regret = regret.strip()[:1500]
 
     if why and len(why) > 0:
         entry = Entry()
