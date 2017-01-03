@@ -105,6 +105,12 @@ def view_entry_id(entry_id):
 def about():
     return render_template('about.html')
 
+@app.route('/random')
+def random():
+    entries = Entry.query.all()
+    entry = entries[randint(0, len(entries) - 1)]
+    return redirect(url_for('view_entry_id', entry_id=entry.id))
+
 #
 # Run locally
 #

@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     {% if entries | length == 1 %}
-        <meta property="og:title" content="I voted for Trump because" />
-        <meta property="og:description" content="{{ entries[0].why }}" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="I voted for Trump because"/>
+        <meta property="og:description" content="{{ entries[0].why }}"/>
     {% endif %}
     <title>trumppanic.com</title>
 
@@ -32,12 +33,9 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <a href="/add" class="nav-item">add your own</a>
-                {% if entries | length == 1 %}
-                    <a href="/" class="nav-item">view all</a>
-                {% else %}
-                    <a href="/sort-by-upvotes" class="nav-item">sort by upvotes</a>
-                    <a href="/" class="nav-item">sort by date</a>
-                {% endif %}
+                <a href="/random" class="nav-item">random</a>
+                <a href="/sort-by-upvotes" class="nav-item">sort by upvotes</a>
+                <a href="/" class="nav-item">sort by date</a>
                 <a href="/about" class="nav-item">about/advertise</a>
             </div>
         </div>
